@@ -43,7 +43,7 @@ class Application
   def add_to_cart(search_term)
     if @@items.include?(search_term)
       @@cart << search_term
-      return "Added #{search_term} to cart"
+      return "added #{search_term}"
     else
       return "Couldn't find #{search_term}"
     end
