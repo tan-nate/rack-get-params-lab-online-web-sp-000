@@ -31,10 +31,6 @@ class Application
 
     resp.finish
   end
-  
-  def handle_cart
-    
-  end
 
   def handle_search(search_term)
     if @@items.include?(search_term)
