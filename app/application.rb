@@ -21,7 +21,8 @@ class Application
     elsif req.path.match(/add/)
       search_term = req.params["item"]
       if @@items.include?(search_term)
-        return "#{search_term} is one of our items"
+        cart << search_term
+        return "Added #{search_term} to cart"
       else
         return "Couldn't find #{search_term}"
       end
@@ -35,6 +36,15 @@ class Application
   def handle_search(search_term)
     if @@items.include?(search_term)
       return "#{search_term} is one of our items"
+    else
+      return "Couldn't find #{search_term}"
+    end
+  end
+  
+  def add_to_cart(search_term)
+    if @@items.include?(search_term)
+      cart << search_term
+      return "Added #{search_term} to cart"
     else
       return "Couldn't find #{search_term}"
     end
